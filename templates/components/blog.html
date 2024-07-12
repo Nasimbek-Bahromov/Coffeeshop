@@ -1,0 +1,27 @@
+{% load static %}
+<!-- blog section start -->
+<div class="blog_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+             <h1 class="about_taital">Our Blog</h1>
+          </div>
+       </div>
+       <div class="blog_section_2">
+          <div class="row">
+             {% for blog in ourblogs %}
+             <div class="col-md-6">
+                <div class="blog_box">
+                   <div class="blog_img"><img src="{{ blog.image.url }}"></div>
+                   <h4 class="date_text">{{ blog.created_at }}</h4>
+                   <h4 class="prep_text">{{ blog.title }}</h4>
+                   <p class="lorem_text">{{ blog.body }}</p>
+                </div>
+                <div class="read_btn"><a href="#">Read More</a></div>
+             </div>
+             {% endfor %}
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- blog section end -->

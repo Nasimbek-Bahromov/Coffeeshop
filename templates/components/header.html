@@ -1,0 +1,73 @@
+{% load static %}
+
+<!-- header section start -->
+<div class="header_section">
+    <div class="container">
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand"href="index.html"><img src="{% static 'images/logo.png' %}"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                   <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="{% url 'coffees' %}">Coffees</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+             </ul>
+             <form class="form-inline my-2 my-lg-0">
+                <div class="login_bt">
+                   <ul>
+                      <li><a href="#"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>Login</a></li>
+                      <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                   </ul>
+                </div>
+             </form>
+          </div>
+       </nav>
+    </div>
+    <!-- banner section start --> 
+    <div class="banner_section layout_padding">
+       <div class="container">
+          <div id="banner_slider" class="carousel slide" data-ride="carousel">
+             <div class="carousel-inner">
+                {% for baner in baners %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                   <div class="row">
+                      <div class="col-md-12">
+                         <div class="banner_taital_main">
+                            <h1 class="banner_taital">{{ baner.title }} <br> {{ baner.title1 }}  </h1>
+                            <p class="banner_text">{{ baner.detail }}</p>
+                            <div class="btn_main">
+                               <div class="about_bt active"><a href="">About Us</a></div>
+                               <div class="callnow_bt"><a href="">Call Now</a></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                {% endfor %}
+             </div>
+             <a class="carousel-control-prev" href="#banner_slider" role="button" data-slide="prev">
+             <i class="fa fa-arrow-left"></i>
+             </a>
+             <a class="carousel-control-next" href="#banner_slider" role="button" data-slide="next">
+             <i class="fa fa-arrow-right"></i>
+             </a>
+          </div>
+       </div> 
+    </div>
+    <!-- banner section end -->
+ </div>
+<!-- header section end -->
