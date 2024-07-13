@@ -62,7 +62,7 @@ def coffees(request):
 
     context = {
         'baners':baners,
-        'coffees':coffees,
+        'coffees':coffees, 
     }
     return render(request , 'main/coffees.html', context)
 
