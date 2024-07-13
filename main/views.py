@@ -59,10 +59,6 @@ def coffees(request):
     if len(ourcoffee) % 4 != 0:
         coffees.append(row)
 
-    # coffee = [
-    #     [1, 2, 3, 4],
-    #     [5, 6, 7, 8]
-    # ]
 
     context = {
         'baners':baners,
